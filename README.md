@@ -1,5 +1,8 @@
-# Demo: Savegames in Godot 4
+# Homing missiles
 
-This project gives an example of how to save and load a game's state in Godot using resources and JSON.
+This Godot project shows how to implement homing missiles that follow their target within a range.
 
-For a detailed guide to get you started with saving and loading in Godot, check out the GDQuest Library: [Saving and loading games in Godot 4 (with resources)](https://gdquest.com/library/save_game_godot4/)
+![](homing-missiles-screenshot.png)
+
+<!-- TODO: link to library -->
+<!-- For a detailed guide to get you started with saving and loading in Godot, check out the GDQuest Library: [Saving and loading games in Godot 4 (with resources)](https://gdquest.com/library/save_game_godot4/) -->

@@ -76,6 +76,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_nseuv")
 }
 autoplay = "enemy_move"
+speed_scale = 0.2
 
 [node name="UserInterface" type="CanvasLayer" parent="."]
 

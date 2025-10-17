@@ -1,14 +1,16 @@
-# Detected by HitBox
+# Detected by HurtArea2D
 @icon("hit_area_2d.svg")
-class_name HitArea2D extends Area2D
+class_name HitArea2D
+extends Area2D
 
 @export var damage := 10
 
-@onready var collision_shape := $CollisionShape2D
+@onready var collision_shape: CollisionShape2D = $CollisionShape2D
 
 
 func _ready() -> void:
-	# This turns off collision mask bit 1 and turns on bit 2. It's the physics layer we reserve to hurtboxes in this demo.
+	# This turns off collision mask bit 1 and turns on bit 2.
+	# It's the physics layer we reserve to hurt boxes in this demo.
 	collision_layer = 2
 	collision_mask = 4
 

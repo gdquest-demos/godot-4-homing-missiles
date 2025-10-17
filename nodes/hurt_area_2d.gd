@@ -1,6 +1,7 @@
 # Allows its owner to detect hits and take damage
 @icon("hurt_area_2d.svg")
-class_name HurtArea2D extends Area2D
+class_name HurtArea2D
+extends Area2D
 
 func _ready() -> void:
 	area_entered.connect(_on_area_entered)

@@ -1,4 +1,5 @@
-class_name Missile2D extends Node2D
+class_name Missile2D
+extends Node2D
 
 const LAUNCH_SPEED := 1800.0
 
@@ -25,6 +26,7 @@ func _ready():
 	# Detects a target to lock on within a large radius.
 	_enemy_detector_area.body_entered.connect(_on_enemy_detector_area_body_entered)
 
+	# Make it top level so it moves independent of the parent node.
 	top_level = true
 	_aim_line.top_level = true
 	_target_line.top_level = true
@@ -38,7 +40,6 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	var direction := Vector2.RIGHT.rotated(rotation).normalized()
-
 	if _target != null:
 		direction = global_position.direction_to(_target.global_position)
 
@@ -48,7 +49,7 @@ func _physics_process(delta: float) -> void:
 
 	_current_velocity += change
 
-	translate(_current_velocity * delta)
+	position += _current_velocity * delta
 	look_at(global_position + _current_velocity)
 
 	# Update the drawing of lines following the missile
@@ -71,5 +72,4 @@ func _on_hit_area_body_entered(_body: Node) -> void:
 func _on_enemy_detector_area_body_entered(enemy: Enemy2D) -> void:
 	if _target != null or enemy == null:
 		return
-
 	_target = enemy
